@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "6a918553-7fdf-47db-bd43-ab43bfc41391",
+		"name": "Master Backend Developer - Spring Boot & Firebase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40804041"
+	},
+	"item": [
+		{
+			"name": "session_1",
+			"item": [
+				{
+					"name": "User: Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/user/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "session_2",
+			"item": [
+				{
+					"name": "Task",
+					"item": [
+						{
+							"name": "Task: Get All Task",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/tasks"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Get Task By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/tasks/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Get Task By User Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/tasks/user/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Delete Task",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/tasks/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Create Task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"This is a task description with less than 200 characters.\",\n  \"priority\": \"HIGH\",\n  \"status\": true,\n  \"user_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/tasks"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Update Task",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Task Title2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/tasks/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get User By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/users/4"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/users/4"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Anton\",\n    \"email\": \"anton@gmail.com\",\n    \"password\": \"anton\",\n    \"role\": \"GUEST\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Update User",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Doni Saputra\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/users/3"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "session_3",
+			"item": []
+		},
+		{
+			"name": "session_4",
+			"item": []
+		},
+		{
+			"name": "session_5",
+			"item": []
+		},
+		{
+			"name": "session_6",
+			"item": []
+		}
+	]
+}
