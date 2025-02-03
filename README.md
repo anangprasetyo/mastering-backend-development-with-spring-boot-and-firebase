@@ -1,4 +1,4 @@
-# Master Backend Development with Java Spring Boot and Firebase: Build Scalable and Secure Applications
+# Master Backend Development with Java Spring Boot and Firebase
 
 This course is designed to equip participants with the skills necessary to build modern backend applications using Java Spring Boot and Firebase for modern web and mobile applications. Participants will develop robust, secure, and scalable RESTful APIs and server-side functionalities for any web or mobile application.
 
