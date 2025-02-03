@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import id.backend.session_2.dto.task.TaskGetRequestDTO;
@@ -40,8 +39,8 @@ public class TaskController {
     }
 
     // endpoint get tas by user id
-    @GetMapping("/user")
-    public List<TaskGetRequestDTO> getTaskByUserId(@RequestParam int id) {
+    @GetMapping("/user/{id}")
+    public List<TaskGetRequestDTO> getTaskByUserId(@PathVariable int id) {
         return taskService.getTastByUserId(id);
     }
 
@@ -58,8 +57,8 @@ public class TaskController {
     }
 
     // endpoint hapus task
-    @DeleteMapping
-    public Map<String, Object> deleteTask(@RequestParam int id) {
+    @DeleteMapping("/{id}")
+    public Map<String, Object> deleteTask(@PathVariable int id) {
         return taskService.deleteTask(id);
     }
 }
