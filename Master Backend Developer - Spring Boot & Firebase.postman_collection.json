@@ -155,7 +155,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Doni Saputra\"\n}",
+									"raw": "{\n    \"name\": \"Doni Saputra\",\n    \"password\": \"donisa\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -172,11 +172,112 @@
 		},
 		{
 			"name": "session_3",
-			"item": []
+			"item": [
+				{
+					"name": "User: Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/logout"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "session_4",
-			"item": []
+			"item": [
+				{
+					"name": "Member: Create member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"2\",\n    \"name\": \"Dono\",\n    \"email\": \"dono@gmail.com\",\n    \"telephone\": \"081782919191\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/members"
+					},
+					"response": []
+				},
+				{
+					"name": "Member: Update member",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Satria Wino\",\n    \"email\": \"satria@gmail.com\",\n    \"telephone\": \"081782919191\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/members"
+					},
+					"response": []
+				},
+				{
+					"name": "Member: Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/members"
+					},
+					"response": []
+				},
+				{
+					"name": "Member: Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/members/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Member: Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/members/2"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "session_5",
@@ -184,7 +285,86 @@
 		},
 		{
 			"name": "session_6",
-			"item": []
+			"item": [
+				{
+					"name": "User: Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODYzNTQ5MSwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NjM1NDkxLCJleHAiOjE3Mzg2MzkwOTEsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.f_68Kx5-7TKSKUD-zxBBiAOFX-NjpBC17YaGCAnD0pWvLrvDxlm6vRZMgVMiZrYLSsOLO-ZV4t165jISaNOBMl0UodeIwtUDkOKz6WAOOuatT-gZet31CCGnNsNdbEffgJPnMPpaO6VLgirqn84ozllWXuDKtTWj-vFKP8_fMMZcQ-wFKARNb_ypRYjfJy-q4n7Nj7heEveXVDxYUS21vtVIpxYYuAeBtSUgsYbq865a63W-TlA5QhXWkoimb0u0OASpD5FuGz2GlKnxXwIL4puDDNlaGuw63exJEBgOhXXMlsCSyxhI7hy3HaFjiZZhdR42GinbTB52XOFRI1jw2w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Member: Get All User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODYzNjg2NCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NjM2ODY0LCJleHAiOjE3Mzg2NDA0NjQsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.Vv0aJqoAsu_z-zrJM_dA7uAHvjhbwHmbtHrm_FIa5xPzy-yzA6PowsRGlbp9Go3cqJW5O0GntdJE_Ibjd9PNIxIkxgZ2zaAvc74nzt6bnBUVMPCnyrBxZOxGyglMAlrttKsvthMXKyknPRVBLuMEOnsp3PQjNPtjIKKKbjwzjCErVYNdQEIzSD1HdMeNVcCiJZIVHAQN4LZv7xr-sDPQcx9nFxtOldXg8FeaZQasOKm77h7V4V55bLyM7ShWn80eQNWGyOkerYO_3tvg-x9CkFDJtCL2LMHSjl5IUUCFPdBG_vqtW207UV1z9Yx1vxK78I7Fsto6EX9q6WfZZTIfiw",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/api/members"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
