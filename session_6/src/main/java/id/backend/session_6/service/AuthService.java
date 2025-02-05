@@ -38,23 +38,23 @@ public class AuthService {
         return new UserLoginResponseDTO(idToken);
     }
 
-    public UserLoginResponseDTO login(UserLoginRequestDTO loginRequest) {
-        String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + firebaseApiKey;
+public UserLoginResponseDTO login(UserLoginRequestDTO loginRequest) {
+    String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + firebaseApiKey;
 
-        Map<String, Object> request = new HashMap<>();
-        request.put("email", loginRequest.getEmail());
-        request.put("password", loginRequest.getPassword());
-        request.put("returnSecureToken", true);
+    Map<String, Object> request = new HashMap<>();
+    request.put("email", loginRequest.getEmail());
+    request.put("password", loginRequest.getPassword());
+    request.put("returnSecureToken", true);
 
-        Map<String, Object> response = restTemplate.postForObject(url, request, Map.class);
-        String idToken = (String) response.get("idToken");
+    Map<String, Object> response = restTemplate.postForObject(url, request, Map.class);
+    String idToken = (String) response.get("idToken");
 
-        return new UserLoginResponseDTO(idToken);
-    }
+    return new UserLoginResponseDTO(idToken);
+}
 
-    public UserRecord getUserByEmail(String email) throws FirebaseAuthException {
-        return FirebaseAuth.getInstance().getUserByEmail(email);
-    }
+public UserRecord getUserByEmail(String email) throws FirebaseAuthException {
+    return FirebaseAuth.getInstance().getUserByEmail(email);
+}
 
     public UserRecord updateUser(String uid, String email, String password)
             throws FirebaseAuthException {

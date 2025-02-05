@@ -34,43 +34,43 @@ public class AuthController {
         }
     }
 
-    @GetMapping("/user")
-    public UserRecord getUserByEmail(@RequestParam String email) {
-        try {
-            return authService.getUserByEmail(email);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to get user by email", e);
-        }
+@GetMapping("/user")
+public UserRecord getUserByEmail(@RequestParam String email) {
+    try {
+        return authService.getUserByEmail(email);
+    } catch (Exception e) {
+        throw new RuntimeException("Failed to get user by email", e);
     }
+}
 
-    @PutMapping("/update/{id}")
-    public UserRecord updateUser(@PathVariable String id, @RequestBody UserLoginRequestDTO updateRequest) {
-        try {
-            return authService.updateUser(id, updateRequest.getEmail(), updateRequest.getPassword());
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to update user", e);
-        }
+@PutMapping("/update/{id}")
+public UserRecord updateUser(@PathVariable String id, @RequestBody UserLoginRequestDTO updateRequest) {
+    try {
+        return authService.updateUser(id, updateRequest.getEmail(), updateRequest.getPassword());
+    } catch (Exception e) {
+        throw new RuntimeException("Failed to update user", e);
     }
+}
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteUser(@PathVariable String id) {
-        try {
-            authService.deleteUser(id);
-            return "User deleted successfully";
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to delete user", e);
-        }
+@DeleteMapping("/delete/{id}")
+public String deleteUser(@PathVariable String id) {
+    try {
+        authService.deleteUser(id);
+        return "User deleted successfully";
+    } catch (Exception e) {
+        throw new RuntimeException("Failed to delete user", e);
     }
+}
 
-    @PostMapping("/logout")
-    public String logoutFirebaseUser(@RequestHeader("Authorization") String token) {
-        try {
-            String idToken = token.replace("Bearer ", "");
-            FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(idToken);
-            FirebaseAuth.getInstance().revokeRefreshTokens(decodedToken.getUid());
-            return "Firebase user logged out successfully";
-        } catch (FirebaseAuthException e) {
-            throw new RuntimeException("Failed to logout Firebase user", e);
-        }
+@PostMapping("/logout")
+public String logoutFirebaseUser(@RequestHeader("Authorization") String token) {
+    try {
+        String idToken = token.replace("Bearer ", "");
+        FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(idToken);
+        FirebaseAuth.getInstance().revokeRefreshTokens(decodedToken.getUid());
+        return "Firebase user logged out successfully";
+    } catch (FirebaseAuthException e) {
+        throw new RuntimeException("Failed to logout Firebase user", e);
     }
+}
 }

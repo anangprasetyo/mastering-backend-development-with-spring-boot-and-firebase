@@ -18,7 +18,7 @@ public class FirebaseConfig {
         File file = new File("src/main/resources/firebase-key.json");
         FileInputStream serviceAccount = new FileInputStream(file);
 
-        FirebaseOptions options = new FirebaseOptions.Builder()
+        FirebaseOptions options = FirebaseOptions.builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .setDatabaseUrl("https://rest-api-e65c7-default-rtdb.firebaseio.com/")
                 .build();
