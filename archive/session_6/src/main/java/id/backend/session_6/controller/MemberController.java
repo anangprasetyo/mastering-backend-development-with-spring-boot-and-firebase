@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,14 +26,18 @@ import com.google.firebase.database.ValueEventListener;
 import id.backend.session_6.model.Member;
 import id.backend.session_6.service.MemberService;
 
+import java.util.logging.Logger;
+
 @RestController
 @RequestMapping("/api/members")
 public class MemberController {
+    private static final Logger logger = Logger.getLogger(MemberController.class.getName());
 
     @Autowired
     private MemberService firebaseDatabaseService;
 
     @PostMapping
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<String> createMember(@RequestBody Member member) {
         try {
             firebaseDatabaseService.createMember(member).get();
@@ -43,7 +48,9 @@ public class MemberController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('USER')")
     public CompletableFuture<ResponseEntity<List<Member>>> getAllMember() {
+        logger.severe("Check");
         CompletableFuture<ResponseEntity<List<Member>>> future = new CompletableFuture<>();
         DatabaseReference memberRef = firebaseDatabaseService.getAllMember();
 
@@ -72,6 +79,7 @@ public class MemberController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('USER')")
     public CompletableFuture<ResponseEntity<Member>> getMember(@PathVariable String id) {
         CompletableFuture<ResponseEntity<Member>> future = new CompletableFuture<>();
         DatabaseReference memberRef = firebaseDatabaseService.getMember(id);
@@ -97,6 +105,7 @@ public class MemberController {
     }
 
     @PutMapping
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<String> updateMember(@RequestBody Member member) {
         try {
             firebaseDatabaseService.updateMember(member).get();
@@ -108,6 +117,7 @@ public class MemberController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<String> deleteMember(@PathVariable String id) {
         try {
             firebaseDatabaseService.deleteMember(id).get();

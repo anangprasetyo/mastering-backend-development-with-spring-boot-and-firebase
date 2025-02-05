@@ -1,13 +1,9 @@
 package id.backend.session_6.service;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +13,6 @@ import id.backend.session_6.model.Member;
 
 @Service
 public class MemberService {
-
     private final FirebaseDatabase firebaseDatabase;
 
     @Autowired

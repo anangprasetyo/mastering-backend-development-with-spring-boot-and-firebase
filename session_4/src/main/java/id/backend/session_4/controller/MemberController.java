@@ -41,79 +41,79 @@ public class MemberController {
         }
     }
 
-@GetMapping
-public CompletableFuture<ResponseEntity<List<Member>>> getAllMember() {
-    CompletableFuture<ResponseEntity<List<Member>>> future = new CompletableFuture<>();
-    DatabaseReference memberRef = firebaseDatabaseService.getAllMember();
+    @GetMapping
+    public CompletableFuture<ResponseEntity<List<Member>>> getAllMember() {
+        CompletableFuture<ResponseEntity<List<Member>>> future = new CompletableFuture<>();
+        DatabaseReference memberRef = firebaseDatabaseService.getAllMember();
 
-    memberRef.addListenerForSingleValueEvent(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            if (dataSnapshot.exists()) {
-                List<Member> members = new ArrayList<>();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Member member = snapshot.getValue(Member.class);
-                    members.add(member);
+        memberRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    List<Member> members = new ArrayList<>();
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Member member = snapshot.getValue(Member.class);
+                        members.add(member);
+                    }
+                    future.complete(ResponseEntity.ok(members));
+                } else {
+                    future.complete(ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
                 }
-                future.complete(ResponseEntity.ok(members));
-            } else {
-                future.complete(ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
             }
-        }
 
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-            future.completeExceptionally(databaseError.toException());
-        }
-    });
-
-    return future;
-}
-
-@GetMapping("/{id}")
-public CompletableFuture<ResponseEntity<Member>> getMember(@PathVariable String id) {
-    CompletableFuture<ResponseEntity<Member>> future = new CompletableFuture<>();
-    DatabaseReference memberRef = firebaseDatabaseService.getMember(id);
-
-    memberRef.addListenerForSingleValueEvent(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            if (dataSnapshot.exists()) {
-                Member member = dataSnapshot.getValue(Member.class);
-                future.complete(ResponseEntity.ok(member));
-            } else {
-                future.complete(ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                future.completeExceptionally(databaseError.toException());
             }
-        }
+        });
 
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-            future.completeExceptionally(databaseError.toException());
-        }
-    });
-
-    return future;
-}
-
-@PutMapping
-public ResponseEntity<String> updateMember(@RequestBody Member member) {
-    try {
-        firebaseDatabaseService.updateMember(member).get();
-        return ResponseEntity.ok("Member updated successfully");
-    } catch (InterruptedException | ExecutionException e) {
-        return ResponseEntity.status(500).body("Failed to update member: " +
-                e.getMessage());
+        return future;
     }
-}
 
-@DeleteMapping("/{id}")
-public ResponseEntity<String> deleteMember(@PathVariable String id) {
-    try {
-        firebaseDatabaseService.deleteMember(id).get();
-        return ResponseEntity.ok("Member deleted successfully");
-    } catch (InterruptedException | ExecutionException e) {
-        return ResponseEntity.status(500).body("Failed to delete member: " +
-                e.getMessage());
+    @GetMapping("/{id}")
+    public CompletableFuture<ResponseEntity<Member>> getMember(@PathVariable String id) {
+        CompletableFuture<ResponseEntity<Member>> future = new CompletableFuture<>();
+        DatabaseReference memberRef = firebaseDatabaseService.getMember(id);
+
+        memberRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Member member = dataSnapshot.getValue(Member.class);
+                    future.complete(ResponseEntity.ok(member));
+                } else {
+                    future.complete(ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                future.completeExceptionally(databaseError.toException());
+            }
+        });
+
+        return future;
     }
-}
+
+    @PutMapping
+    public ResponseEntity<String> updateMember(@RequestBody Member member) {
+        try {
+            firebaseDatabaseService.updateMember(member).get();
+            return ResponseEntity.ok("Member updated successfully");
+        } catch (InterruptedException | ExecutionException e) {
+            return ResponseEntity.status(500).body("Failed to update member: " +
+                    e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteMember(@PathVariable String id) {
+        try {
+            firebaseDatabaseService.deleteMember(id).get();
+            return ResponseEntity.ok("Member deleted successfully");
+        } catch (InterruptedException | ExecutionException e) {
+            return ResponseEntity.status(500).body("Failed to delete member: " +
+                    e.getMessage());
+        }
+    }
 }
