@@ -18,17 +18,10 @@ public class FirebaseConfig {
         File file = new File("src/main/resources/firebase-key.json");
         FileInputStream serviceAccount = new FileInputStream(file);
 
-        FirebaseOptions options;
-        try {
-            options = FirebaseOptions.builder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .build();
-        } catch (Exception e) {
-            // Use default credentials (works for Google Cloud environments)
-            options = FirebaseOptions.builder()
-                    .setCredentials(GoogleCredentials.getApplicationDefault())
-                    .build();
-        }
+        FirebaseOptions options = FirebaseOptions.builder()
+                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                .setDatabaseUrl("https://rest-api-e65c7-default-rtdb.firebaseio.com/")
+                .build();
 
         if (FirebaseApp.getApps().isEmpty()) {
             return FirebaseApp.initializeApp(options);
