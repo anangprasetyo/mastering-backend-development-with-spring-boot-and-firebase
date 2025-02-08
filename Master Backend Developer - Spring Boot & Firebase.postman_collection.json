@@ -7,27 +7,149 @@
 	},
 	"item": [
 		{
-			"name": "session_1",
+			"name": "session1_1",
 			"item": [
 				{
-					"name": "User: Get User By Id",
+					"name": "User: Get By Id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": "localhost:8080/api/user/1"
 					},
 					"response": []
+				},
+				{
+					"name": "User: Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/user/3"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/user"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Wisnu\",\n    \"email\": \"wisnu@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/user"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Wisnu Karto\",\n    \"email\": \"wisnu@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/user/3"
+					},
+					"response": []
 				}
 			]
 		},
 		{
-			"name": "session_2",
+			"name": "session1_2",
+			"item": [
+				{
+					"name": "Book: Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/book/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/book/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/book"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Elephant\",\n    \"author\": \"Doni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/book"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Elephant 2\",\n    \"author\": \"Doni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/book/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "session2_1",
 			"item": [
 				{
 					"name": "Task",
 					"item": [
 						{
-							"name": "Task: Get All Task",
+							"name": "Task: Get All",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -36,16 +158,16 @@
 							"response": []
 						},
 						{
-							"name": "Task: Get Task By Id",
+							"name": "Task: Get By Id",
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "localhost:8080/api/tasks/2"
+								"url": "localhost:8080/api/tasks/3"
 							},
 							"response": []
 						},
 						{
-							"name": "Task: Get Task By User Id",
+							"name": "Task: Get By User Id",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -54,22 +176,22 @@
 							"response": []
 						},
 						{
-							"name": "Task: Delete Task",
+							"name": "Task: Delete",
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "localhost:8080/api/tasks/2"
+								"url": "localhost:8080/api/tasks/7"
 							},
 							"response": []
 						},
 						{
-							"name": "Task: Create Task",
+							"name": "Task: Create",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"This is a task description with less than 200 characters.\",\n  \"priority\": \"HIGH\",\n  \"status\": true,\n  \"user_id\": 3\n}",
+									"raw": "{\n  \"title\": \"Task Medium\",\n  \"description\": \"This is a task description medium\",\n  \"priority\": \"MEDIUM\",\n  \"status\": true,\n  \"user_id\": 9\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -81,20 +203,20 @@
 							"response": []
 						},
 						{
-							"name": "Task: Update Task",
+							"name": "Task: Update",
 							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"title\": \"Task Title2\"\n}",
+									"raw": "{\n  \"title\": \"Task Medium Check\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "localhost:8080/api/tasks/2"
+								"url": "localhost:8080/api/tasks/7"
 							},
 							"response": []
 						}
@@ -113,7 +235,7 @@
 							"response": []
 						},
 						{
-							"name": "User: Get User By Id",
+							"name": "User: Get By Id",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -126,7 +248,7 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "localhost:8080/api/users/4"
+								"url": "localhost:8080/api/users/3"
 							},
 							"response": []
 						},
@@ -137,7 +259,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Anton\",\n    \"email\": \"anton@gmail.com\",\n    \"password\": \"anton\",\n    \"role\": \"GUEST\"\n}",
+									"raw": "{\n    \"name\": \"Wisnu\",\n    \"email\": \"wisnu@gmail.com\",\n    \"password\": \"wisnu\",\n    \"role\": \"GUEST\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -163,6 +285,156 @@
 									}
 								},
 								"url": "localhost:8080/api/users/3"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "session2_2",
+			"item": [
+				{
+					"name": "Lesson",
+					"item": [
+						{
+							"name": "Lesson: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/tasks"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/tasks/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/tasks/user/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/tasks/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"This is a task description with less than 200 characters.\",\n  \"priority\": \"HIGH\",\n  \"status\": true,\n  \"user_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/tasks"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Task Title2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/tasks/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "Student: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/students"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/students/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/students/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"riga\",\n    \"email\": \"riga@gmail.com\",\n    \"classes\": \"A01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/students"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Budi Santoso\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/students/3"
 							},
 							"response": []
 						}
@@ -281,88 +553,273 @@
 		},
 		{
 			"name": "session_5",
-			"item": []
+			"item": [
+				{
+					"name": "Firebase: Send Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"f08RQH44R9OsjY6X5yKoDR:APA91bHiOrYJ-Ey9MqIziqyGGOLTVSqXi6lybrWEVLHflOKojFQMWXtCZOk5xeoTO0khseZxRvMCvsbhHqXt1SBaSsgBpZYfnV827haZKxKx6Yi4bvOFPhU\",\n    \"title\": \"Test FCM\",\n    \"body\": \"Halo ini merupakan test FCM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/notifications/send"
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase: Send Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjQwZDg4ZGQ1NWQxYjAwZDg0ZWU4MWQwYjk2M2RlNGNkOGM0ZmFjM2UiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdGFwaS04ZmFjOCIsImF1ZCI6InJlc3RhcGktOGZhYzgiLCJhdXRoX3RpbWUiOjE3MzY4MzUyNTksInVzZXJfaWQiOiJJbTJPaDhGek1UU1RKdHRoZ2h4czluMzRLTzIzIiwic3ViIjoiSW0yT2g4RnpNVFNUSnR0aGdoeHM5bjM0S08yMyIsImlhdCI6MTczNjgzNTI1OSwiZXhwIjoxNzM2ODM4ODU5LCJlbWFpbCI6ImFuYW5ncHJhc2V0eW9Ab3V0bG9vay5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYW5hbmdwcmFzZXR5b0BvdXRsb29rLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.fVywyaJI7V6famluNmWW6-otMUSUACO0kZHAF-HWTJ_BA-qJgLAY1wleRQq0Nyjb7dayup1ifEZiiR7qOQul3Wwy7z56ZbMdJC_esPXpTfaad_5TMM3ncT-IER3MMGJlqUkCb-HqCuGqxhl2NlzW6XmEOi_Smg8G4CmV4RTXMnCoolllwbaIfiAW5nO0zOv3_UlW5_o04piRPOjhzsyOvqqzroxaiWPs-k9f0WXiVZ94EqvowbEIo0SakfwpsTW_kz8FHwuq9DkGRdtDN3zp6KWnuvb3239Sy2kI-W9muKSQkDhbNoZmztBsq45s45QeTWmJv9n97SP4t2hwPguslg",
+								"description": "Token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"test-fcm\",\n    \"title\": \"Test FCM\",\n    \"body\": \"Halo ini merupakan test FCM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/notifications/send/message"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "session_6",
 			"item": [
 				{
-					"name": "User: Create User",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+					"name": "user",
+					"item": [
+						{
+							"name": "User: Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satria@gmail.com\",\n    \"password\": \"satria\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/signup"
+							},
+							"response": []
 						},
-						"url": "localhost:8080/api/auth/signup"
-					},
-					"response": []
+						{
+							"name": "User: Update User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satriaw@gmail.com\",\n    \"password\": \"satriaw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/update/JuKcVZybLDX4W5BPDjIUh7y30PI2"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satriaw@gmail.com\",\n    \"password\": \"satriaw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/update/JuKcVZybLDX4W5BPDjIUh7y30PI2"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get User By Email",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satria@gmail.com\",\n    \"password\": \"satria\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/user?email=satria@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"user"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "satria@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User: Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODYzNTQ5MSwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NjM1NDkxLCJleHAiOjE3Mzg2MzkwOTEsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.f_68Kx5-7TKSKUD-zxBBiAOFX-NjpBC17YaGCAnD0pWvLrvDxlm6vRZMgVMiZrYLSsOLO-ZV4t165jISaNOBMl0UodeIwtUDkOKz6WAOOuatT-gZet31CCGnNsNdbEffgJPnMPpaO6VLgirqn84ozllWXuDKtTWj-vFKP8_fMMZcQ-wFKARNb_ypRYjfJy-q4n7Nj7heEveXVDxYUS21vtVIpxYYuAeBtSUgsYbq865a63W-TlA5QhXWkoimb0u0OASpD5FuGz2GlKnxXwIL4puDDNlaGuw63exJEBgOhXXMlsCSyxhI7hy3HaFjiZZhdR42GinbTB52XOFRI1jw2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/logout"
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"name": "User: Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+					"name": "member",
+					"item": [
+						{
+							"name": "Member: Get All User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcyMDIzNSwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzIwMjM1LCJleHAiOjE3Mzg3MjM4MzUsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.DNKC6M3WDmibv-NFGMegHRGbgxbqLXLUBaOWyoYQphr3fCrdlWWjFTHTb8MrDbzmEODJiv7sot8SY9zvaTeciIKWLyD_jNUenNukgrcd0D9jCM6AmmmyrTQuZNb85FWG-GYR3sm2gYMnNrNHjq8ORmK2InnDa_AsVv1BRIsxzSEg6DC2flmpnbvP3yWU5y3bPWOB1IxkHoRAtKQC1E2zMOlqs56FWFE08ew2PIZLmIO3vyAtP271K6WwnMEHU0g9Rdeek5pE9Hwvl39On7GTYs9OTDT5b-L-bTDRbToc6Ir-vYprNBqBBgJTdbkmjCBwPVSS8KOlN_85b_2En86voA",
+										"description": "Token",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": "localhost:8080/api/members"
+							},
+							"response": []
 						},
-						"url": "localhost:8080/api/auth/login"
-					},
-					"response": []
-				},
-				{
-					"name": "User: Logout",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODYzNTQ5MSwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NjM1NDkxLCJleHAiOjE3Mzg2MzkwOTEsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.f_68Kx5-7TKSKUD-zxBBiAOFX-NjpBC17YaGCAnD0pWvLrvDxlm6vRZMgVMiZrYLSsOLO-ZV4t165jISaNOBMl0UodeIwtUDkOKz6WAOOuatT-gZet31CCGnNsNdbEffgJPnMPpaO6VLgirqn84ozllWXuDKtTWj-vFKP8_fMMZcQ-wFKARNb_ypRYjfJy-q4n7Nj7heEveXVDxYUS21vtVIpxYYuAeBtSUgsYbq865a63W-TlA5QhXWkoimb0u0OASpD5FuGz2GlKnxXwIL4puDDNlaGuw63exJEBgOhXXMlsCSyxhI7hy3HaFjiZZhdR42GinbTB52XOFRI1jw2w",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+						{
+							"name": "Member: Update member Copy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcwOTM4OCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzA5Mzg4LCJleHAiOjE3Mzg3MTI5ODgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.BX5Tx0tI-KBH1utKGGFJOHjcqjRfq7UcoJQMrnNNRQAroGauFMJfMzujvA5L1QnIGeI9XYzXXKg43YrFOEZezqufGuoU3v7y0HsrILu3oKwTiiILZuGD0OOppGxGgDCW64fqt242QV_6NurZwR_GvC-ykvNSayd8LRApU9XeHS213EVdv6YTbiTA4Tar-EnWbDgPhaS8QUXm4KJYWcNUMEYhBOY8RbxFYDIInEO41cpsUBVPqTVtCwA6_BkSSNrG8kyexvYydnrSnODUDNWRIJrAqzeqJQCMVvCqdXDCYuEFq9wxtB_Fh2N0jzSWLlEuIDG44w06YEIPsabIImpPVQ",
+										"description": "Token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Satria Wino\",\n    \"email\": \"satria@gmail.com\",\n    \"telephone\": \"081782919191\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/members"
+							},
+							"response": []
 						},
-						"url": "localhost:8080/api/auth/logout"
-					},
-					"response": []
-				},
-				{
-					"name": "Member: Get All User",
-					"request": {
-						"auth": {
-							"type": "noauth"
+						{
+							"name": "Member: Get User By Id Copy",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcwOTM4OCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzA5Mzg4LCJleHAiOjE3Mzg3MTI5ODgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.BX5Tx0tI-KBH1utKGGFJOHjcqjRfq7UcoJQMrnNNRQAroGauFMJfMzujvA5L1QnIGeI9XYzXXKg43YrFOEZezqufGuoU3v7y0HsrILu3oKwTiiILZuGD0OOppGxGgDCW64fqt242QV_6NurZwR_GvC-ykvNSayd8LRApU9XeHS213EVdv6YTbiTA4Tar-EnWbDgPhaS8QUXm4KJYWcNUMEYhBOY8RbxFYDIInEO41cpsUBVPqTVtCwA6_BkSSNrG8kyexvYydnrSnODUDNWRIJrAqzeqJQCMVvCqdXDCYuEFq9wxtB_Fh2N0jzSWLlEuIDG44w06YEIPsabIImpPVQ",
+										"description": "Token",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/members/1"
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODYzNjg2NCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NjM2ODY0LCJleHAiOjE3Mzg2NDA0NjQsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.Vv0aJqoAsu_z-zrJM_dA7uAHvjhbwHmbtHrm_FIa5xPzy-yzA6PowsRGlbp9Go3cqJW5O0GntdJE_Ibjd9PNIxIkxgZ2zaAvc74nzt6bnBUVMPCnyrBxZOxGyglMAlrttKsvthMXKyknPRVBLuMEOnsp3PQjNPtjIKKKbjwzjCErVYNdQEIzSD1HdMeNVcCiJZIVHAQN4LZv7xr-sDPQcx9nFxtOldXg8FeaZQasOKm77h7V4V55bLyM7ShWn80eQNWGyOkerYO_3tvg-x9CkFDJtCL2LMHSjl5IUUCFPdBG_vqtW207UV1z9Yx1vxK78I7Fsto6EX9q6WfZZTIfiw",
-								"type": "text"
-							}
-						],
-						"url": "localhost:8080/api/members"
-					},
-					"response": []
+						{
+							"name": "Member: Delete User By Id Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcwOTM4OCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzA5Mzg4LCJleHAiOjE3Mzg3MTI5ODgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.BX5Tx0tI-KBH1utKGGFJOHjcqjRfq7UcoJQMrnNNRQAroGauFMJfMzujvA5L1QnIGeI9XYzXXKg43YrFOEZezqufGuoU3v7y0HsrILu3oKwTiiILZuGD0OOppGxGgDCW64fqt242QV_6NurZwR_GvC-ykvNSayd8LRApU9XeHS213EVdv6YTbiTA4Tar-EnWbDgPhaS8QUXm4KJYWcNUMEYhBOY8RbxFYDIInEO41cpsUBVPqTVtCwA6_BkSSNrG8kyexvYydnrSnODUDNWRIJrAqzeqJQCMVvCqdXDCYuEFq9wxtB_Fh2N0jzSWLlEuIDG44w06YEIPsabIImpPVQ",
+										"description": "Token",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/members/2"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
