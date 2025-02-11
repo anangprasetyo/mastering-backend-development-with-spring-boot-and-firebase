@@ -97,7 +97,7 @@ public class StudentService {
         }
 
         if (Objects.nonNull(studentDTO.getPassword())) {
-            student.setPassword(passwordEncoder.encode(student.getPassword()));
+            student.setPassword(passwordEncoder.encode(studentDTO.getPassword()));
         }
 
         if (Objects.nonNull(studentDTO.getClasses())) {
