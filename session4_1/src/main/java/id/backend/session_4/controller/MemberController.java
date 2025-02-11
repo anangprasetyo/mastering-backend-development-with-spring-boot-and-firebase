@@ -1,22 +1,18 @@
 package id.backend.session_4.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,14 +24,25 @@ import id.backend.session_4.service.MemberService;
 @RestController
 @RequestMapping("/api/members")
 public class MemberController {
-    @Autowired
-    private MemberService firebaseDatabaseService;
 
-    @PostMapping
-    public ResponseEntity<String> createMember(@RequestBody Member member) {
+    @Autowired
+    private MemberService memberService;
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> createMember(
+            @RequestPart("member") String memberJson,
+            @RequestPart(value = "image", required = false) MultipartFile image) {
         try {
-            firebaseDatabaseService.createMember(member).get();
-            return ResponseEntity.ok("Member created successfully");
+            // Convert JSON string to Member object
+            Member member = objectMapper.readValue(memberJson, Member.class);
+            // Now process 'member' and 'image' as needed
+            memberService.createMember(member, image).get();
+            return ResponseEntity.ok("Member created successfully!");
+
+        } catch (IOException e) {
+            return ResponseEntity.badRequest().body("Invalid JSON format for member");
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Failed to create member: " + e.getMessage());
         }
@@ -44,7 +51,7 @@ public class MemberController {
     @GetMapping
     public CompletableFuture<ResponseEntity<List<Member>>> getAllMember() {
         CompletableFuture<ResponseEntity<List<Member>>> future = new CompletableFuture<>();
-        DatabaseReference memberRef = firebaseDatabaseService.getAllMember();
+        DatabaseReference memberRef = memberService.getAllMember();
 
         memberRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -73,7 +80,7 @@ public class MemberController {
     @GetMapping("/{id}")
     public CompletableFuture<ResponseEntity<Member>> getMember(@PathVariable String id) {
         CompletableFuture<ResponseEntity<Member>> future = new CompletableFuture<>();
-        DatabaseReference memberRef = firebaseDatabaseService.getMember(id);
+        DatabaseReference memberRef = memberService.getMember(id);
 
         memberRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -95,25 +102,28 @@ public class MemberController {
         return future;
     }
 
-    @PutMapping
-    public ResponseEntity<String> updateMember(@RequestBody Member member) {
+    @PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> updateMember(
+            @RequestPart("member") String memberJson,
+            @RequestPart(value = "image", required = false) MultipartFile image) {
         try {
-            firebaseDatabaseService.updateMember(member).get();
+            // Convert JSON string to Member object
+            Member member = objectMapper.readValue(memberJson, Member.class);
+            // Now process 'member' and 'image' as needed
+            memberService.updateMember(member, image).get();
             return ResponseEntity.ok("Member updated successfully");
-        } catch (InterruptedException | ExecutionException e) {
-            return ResponseEntity.status(500).body("Failed to update member: " +
-                    e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Failed to update member: " + e.getMessage());
         }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMember(@PathVariable String id) {
         try {
-            firebaseDatabaseService.deleteMember(id).get();
+            memberService.deleteMember(id).get();
             return ResponseEntity.ok("Member deleted successfully");
-        } catch (InterruptedException | ExecutionException e) {
-            return ResponseEntity.status(500).body("Failed to delete member: " +
-                    e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Failed to delete member: " + e.getMessage());
         }
     }
 }

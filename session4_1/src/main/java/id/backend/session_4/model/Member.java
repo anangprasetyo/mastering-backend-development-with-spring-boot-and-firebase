@@ -8,4 +8,5 @@ public class Member {
     private String name;
     private String email;
     private String telephone;
+    private String imageUrl; // URL of the uploaded image
 }

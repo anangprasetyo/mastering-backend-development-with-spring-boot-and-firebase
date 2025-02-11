@@ -8,4 +8,5 @@ public class Book {
     private String title;
     private String description;
     private String category;
+    private String imageUrl;
 }
