@@ -244,7 +244,7 @@
 							"response": []
 						},
 						{
-							"name": "User: Delete User",
+							"name": "User: Delete",
 							"request": {
 								"method": "DELETE",
 								"header": [],
@@ -253,7 +253,7 @@
 							"response": []
 						},
 						{
-							"name": "User: Create User",
+							"name": "User: Create",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -271,20 +271,20 @@
 							"response": []
 						},
 						{
-							"name": "User: Update User",
+							"name": "User: Update",
 							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Doni Saputra\",\n    \"password\": \"donisa\"\n}",
+									"raw": "{\n    \"name\": \"admin\",\n    \"password\": \"admin\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "localhost:8080/api/users/3"
+								"url": "localhost:8080/api/users/10"
 							},
 							"response": []
 						}
@@ -303,7 +303,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "localhost:8080/api/tasks"
+								"url": "localhost:8080/api/lessons"
 							},
 							"response": []
 						},
@@ -312,16 +312,16 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "localhost:8080/api/tasks/2"
+								"url": "localhost:8080/api/lessons/2"
 							},
 							"response": []
 						},
 						{
-							"name": "Lesson: Get By Id",
+							"name": "Lesson: Get By Student Id",
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "localhost:8080/api/tasks/user/3"
+								"url": "localhost:8080/api/lessons/student/3"
 							},
 							"response": []
 						},
@@ -330,7 +330,7 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "localhost:8080/api/tasks/2"
+								"url": "localhost:8080/api/lessons/2"
 							},
 							"response": []
 						},
@@ -341,14 +341,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"This is a task description with less than 200 characters.\",\n  \"priority\": \"HIGH\",\n  \"status\": true,\n  \"user_id\": 3\n}",
+									"raw": "{\n  \"name\": \"Matematika\",\n  \"student_id\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "localhost:8080/api/tasks"
+								"url": "localhost:8080/api/lessons"
 							},
 							"response": []
 						},
@@ -359,14 +359,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"title\": \"Task Title2\"\n}",
+									"raw": "{\n  \"name\": \"Matematika\",\n  \"student_id\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "localhost:8080/api/tasks/2"
+								"url": "localhost:8080/api/lessons/2"
 							},
 							"response": []
 						}
@@ -443,51 +443,479 @@
 			]
 		},
 		{
-			"name": "session_3",
+			"name": "session3_1",
 			"item": [
 				{
-					"name": "User: Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+					"name": "Task",
+					"item": [
+						{
+							"name": "Task: Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/tasks"
+							},
+							"response": []
 						},
-						"url": "localhost:8080/api/auth/login"
-					},
-					"response": []
+						{
+							"name": "Task: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/tasks/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Get By User Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/tasks/user/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/tasks/7"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Task Medium\",\n  \"description\": \"This is a task description medium\",\n  \"priority\": \"MEDIUM\",\n  \"status\": true,\n  \"user_id\": 9\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/tasks"
+							},
+							"response": []
+						},
+						{
+							"name": "Task: Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Task Medium Check\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/tasks/7"
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"name": "User: Logout",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+					"name": "User",
+					"item": [
+						{
+							"name": "User: Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"anton@gmail.com\",\n    \"password\": \"anton\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/login"
+							},
+							"response": []
 						},
-						"url": "localhost:8080/api/auth/logout"
-					},
-					"response": []
+						{
+							"name": "User: Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/logout"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnRvbkBnbWFpbC5jb20iLCJpYXQiOjE3MzkxODM0NzQsImV4cCI6MTczOTIwMTQ3NH0.bFPH2ZfFz1yOpXuyzvQiO-IveK-7FgcEX0QVKiQCk_U",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/users/4"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/users/3"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Wisnu\",\n    \"email\": \"wisnu@gmail.com\",\n    \"password\": \"wisnu\",\n    \"role\": \"GUEST\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"wisnu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/users/9"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "session_4",
+			"name": "session3_2",
 			"item": [
 				{
-					"name": "Member: Create member",
+					"name": "Lesson",
+					"item": [
+						{
+							"name": "Lesson: Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3NDg0LCJleHAiOjE3MzkyNTU0ODR9.kkxkDDtX5awdU0zns_nYkfpS0vWwBMZ6Iq6CXbUXLpI",
+										"description": "Token",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/lessons"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3OTYwLCJleHAiOjE3MzkyNTU5NjB9.MJ7JGnTjJrPnqLWZOj-c6bNhJkLtbaTfZkOk3UCoiOU",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/lessons/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Get By Student Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/lessons/student/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3OTYwLCJleHAiOjE3MzkyNTU5NjB9.MJ7JGnTjJrPnqLWZOj-c6bNhJkLtbaTfZkOk3UCoiOU",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/lessons/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3OTYwLCJleHAiOjE3MzkyNTU5NjB9.MJ7JGnTjJrPnqLWZOj-c6bNhJkLtbaTfZkOk3UCoiOU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Matematika3\",\n  \"student_id\": 6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/lessons"
+							},
+							"response": []
+						},
+						{
+							"name": "Lesson: Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5MjM3OTYwLCJleHAiOjE3MzkyNTU5NjB9.MJ7JGnTjJrPnqLWZOj-c6bNhJkLtbaTfZkOk3UCoiOU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Biologi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/lessons/4"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "Student: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/students"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/students/5"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/students/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"deniso\",\n    \"email\": \"deniso@gmail.com\",\n    \"password\": \"deniso\",\n    \"classes\": \"A01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/students"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"rigalia\",\n    \"email\": \"rigalia@gmail.com\",\n    \"password\": \"rigalia\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/students/5"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"deniso@gmail.com\",\n    \"password\": \"deniso\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Student: Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/logout"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "session4_1",
+			"item": [
+				{
+					"name": "Member: Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -505,7 +933,7 @@
 					"response": []
 				},
 				{
-					"name": "Member: Update member",
+					"name": "Member: Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -523,7 +951,7 @@
 					"response": []
 				},
 				{
-					"name": "Member: Get All User",
+					"name": "Member: Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -532,7 +960,7 @@
 					"response": []
 				},
 				{
-					"name": "Member: Get User By Id",
+					"name": "Member: Get By Id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -541,11 +969,79 @@
 					"response": []
 				},
 				{
-					"name": "Member: Delete User By Id",
+					"name": "Member: Delete By Id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": "localhost:8080/api/members/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "session4_2",
+			"item": [
+				{
+					"name": "Book: Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"2\",\n    \"title\": \"Berlari diatas Awan\",\n    \"description\": \"Berlari diatas Awan adalah karya\",\n    \"category\": \"Sci-Fi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/books"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"title\": \"Mengejar Langit 2\",\n    \"description\": \"Mengejar langit adalah buku karya\",\n    \"category\": \"Sci-Fi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/books"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/books"
+					},
+					"response": []
+				},
+				{
+					"name": "Book: Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/books/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Books: Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/books/2"
 					},
 					"response": []
 				}
