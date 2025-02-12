@@ -20,6 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import id.backend.session_4.model.Member;
 import id.backend.session_4.service.MemberService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/api/members")
@@ -113,9 +118,16 @@ public class MemberController {
             memberService.updateMember(member, image).get();
             return ResponseEntity.ok("Member updated successfully");
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Failed to update member: " + e.getMessage());
+            return ResponseEntity.status(500).body("Failed to update member: " +
+                    e.getMessage());
         }
     }
+
+    // @PutMapping("/{imageUrl}")
+    // public String putMethodName(@PathVariable String imageUrl) {
+    // memberService.updateMember(imageUrl);
+    // return "Ok";
+    // }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMember(@PathVariable String id) {

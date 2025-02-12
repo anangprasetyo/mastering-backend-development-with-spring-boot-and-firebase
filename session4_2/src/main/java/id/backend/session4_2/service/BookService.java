@@ -1,6 +1,7 @@
 package id.backend.session4_2.service;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,24 +61,28 @@ public class BookService {
 
     public CompletableFuture<Void> updateBook(Book book, MultipartFile imageFile) {
         return CompletableFuture.supplyAsync(() -> {
-            try {// Get existing book to check for old image
-                Book oldBook = new CompletableFuture<Book>().completeAsync(() -> {
-                    final Book[] result = new Book[1];
-                    getDatabaseReference()
-                            .child(String.valueOf(book.getId()))
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    result[0] = dataSnapshot.getValue(Book.class);
-                                }
+            try {
+                // Get existing book to check for old image
+                CountDownLatch latch = new CountDownLatch(1);
+                final Book[] bookHold = new Book[1];
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-                                    throw new RuntimeException("Failed to get book: " + databaseError.getMessage());
-                                }
-                            });
-                    return result[0];
-                }).get();
+                getDatabaseReference().child(book.getId())
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                bookHold[0] = dataSnapshot.getValue(Book.class);
+                                latch.countDown();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                latch.countDown();
+                            }
+                        });
+
+                latch.await();
+
+                Book oldBook = bookHold[0];
 
                 // Handle image update
                 if (imageFile != null && !imageFile.isEmpty()) {
@@ -109,23 +114,26 @@ public class BookService {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 // Get book to check for image
-                Book book = new CompletableFuture<Book>().completeAsync(() -> {
-                    final Book[] result = new Book[1];
-                    getDatabaseReference()
-                            .child(id)
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    result[0] = dataSnapshot.getValue(Book.class);
-                                }
+                CountDownLatch latch = new CountDownLatch(1);
+                final Book[] bookHold = new Book[1];
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-                                    throw new RuntimeException("Failed to get book: " + databaseError.getMessage());
-                                }
-                            });
-                    return result[0];
-                }).get();
+                getDatabaseReference().child(id)
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                bookHold[0] = dataSnapshot.getValue(Book.class);
+                                latch.countDown();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                latch.countDown();
+                            }
+                        });
+
+                latch.await();
+
+                Book book = bookHold[0];
 
                 // Delete image if exists
                 if (book != null && book.getImageUrl() != null) {

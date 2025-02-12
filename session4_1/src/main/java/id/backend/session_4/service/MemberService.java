@@ -1,6 +1,8 @@
 package id.backend.session_4.service;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -62,28 +64,32 @@ public class MemberService {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 // Get existing member to check for old image
-                Member oldMember = new CompletableFuture<Member>().completeAsync(() -> {
-                    final Member[] result = new Member[1];
-                    getDatabaseReference()
-                            .child(String.valueOf(member.getId()))
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    result[0] = dataSnapshot.getValue(Member.class);
-                                }
+                CountDownLatch latch = new CountDownLatch(1);
+                final Member[] memberHold = new Member[1];
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-                                    throw new RuntimeException("Failed to get member: " + databaseError.getMessage());
-                                }
-                            });
-                    return result[0];
-                }).get();
+                getDatabaseReference().child(member.getId())
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                memberHold[0] = dataSnapshot.getValue(Member.class);
+                                latch.countDown();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                latch.countDown();
+                            }
+                        });
+
+                latch.await();
+
+                Member oldMember = memberHold[0];
 
                 // Handle image update
                 if (imageFile != null && !imageFile.isEmpty()) {
                     // Delete old image if exists
                     if (oldMember != null && oldMember.getImageUrl() != null) {
+                        System.out.println(oldMember.getImageUrl());
                         localStorageService.deleteFile(oldMember.getImageUrl());
                     }
                     // Upload new image
@@ -111,23 +117,26 @@ public class MemberService {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 // Get member to check for image
-                Member member = new CompletableFuture<Member>().completeAsync(() -> {
-                    final Member[] result = new Member[1];
-                    getDatabaseReference()
-                            .child(id)
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    result[0] = dataSnapshot.getValue(Member.class);
-                                }
+                CountDownLatch latch = new CountDownLatch(1);
+                final Member[] memberHold = new Member[1];
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-                                    throw new RuntimeException("Failed to get member: " + databaseError.getMessage());
-                                }
-                            });
-                    return result[0];
-                }).get();
+                getDatabaseReference().child(id)
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                memberHold[0] = dataSnapshot.getValue(Member.class);
+                                latch.countDown();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                latch.countDown();
+                            }
+                        });
+
+                latch.await();
+
+                Member member = memberHold[0];
 
                 // Delete image if exists
                 if (member != null && member.getImageUrl() != null) {

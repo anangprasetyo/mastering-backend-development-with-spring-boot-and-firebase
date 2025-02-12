@@ -91,6 +91,7 @@ public class LocalStorageService {
             try {
                 String fileName = imagePath.substring(imagePath.lastIndexOf('/') + 1);
                 Path filePath = Paths.get(uploadDir, fileName);
+                System.out.println("Deleting file: " + filePath); // DEBUGGING LINE
                 Files.deleteIfExists(filePath);
             } catch (IOException e) {
                 throw new RuntimeException("Error deleting file: " + e.getMessage(), e);

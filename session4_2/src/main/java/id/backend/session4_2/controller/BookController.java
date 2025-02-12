@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,17 +39,17 @@ public class BookController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> createBook(
-            @RequestPart("member") String bookJson,
+            @RequestPart("book") String bookJson,
             @RequestPart(value = "image", required = false) MultipartFile image) {
         try {
-            // Convert JSON string to Member object
+            // Convert JSON string to Book object
             Book book = objectMapper.readValue(bookJson, Book.class);
-            // Now process 'member' and 'image' as needed
+            // Now process 'book' and 'image' as needed
             bookService.createBook(book, image).get();
-            return ResponseEntity.ok("Member created successfully!");
+            return ResponseEntity.ok("Book created successfully!");
 
         } catch (IOException e) {
-            return ResponseEntity.badRequest().body("Invalid JSON format for member");
+            return ResponseEntity.badRequest().body("Invalid JSON format for book");
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Failed to create book: " + e.getMessage());
         }
@@ -112,16 +111,16 @@ public class BookController {
 
     @PutMapping
     public ResponseEntity<String> updateBook(
-            @RequestPart("member") String bookJson,
+            @RequestPart("book") String bookJson,
             @RequestPart(value = "image", required = false) MultipartFile image) {
         try {
-            // Convert JSON string to Member object
+            // Convert JSON string to Book object
             Book book = objectMapper.readValue(bookJson, Book.class);
-            // Now process 'member' and 'image' as needed
+            // Now process 'book' and 'image' as needed
             bookService.updateBook(book, image).get();
             return ResponseEntity.ok("Book updated successfully");
         } catch (IOException e) {
-            return ResponseEntity.badRequest().body("Invalid JSON format for member");
+            return ResponseEntity.badRequest().body("Invalid JSON format for book");
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Failed to update book: " + e.getMessage());
         }
