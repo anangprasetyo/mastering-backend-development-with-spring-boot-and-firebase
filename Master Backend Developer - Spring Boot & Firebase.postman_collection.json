@@ -918,15 +918,30 @@
 					"name": "Member: Create",
 					"request": {
 						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"2\",\n    \"name\": \"Dono\",\n    \"email\": \"dono@gmail.com\",\n    \"telephone\": \"081782919191\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
 							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "member",
+									"value": "{\"id\": \"10\", \"name\": \"John Doe\", \"email\": \"john@example.com\", \"telephone\": \"081782919191\"}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/Users/anangprasetyo/Documents/jujutsu-kaisen-anime-characters-uhdpaper.com-4K-8.1755.jpg",
+										"/Users/anangprasetyo/Documents/jujutsu-kaisen-anime-characters-uhdpaper.com-4K-8.1762.jpg"
+									]
+								}
+							]
 						},
 						"url": "localhost:8080/api/members"
 					},
@@ -936,15 +951,27 @@
 					"name": "Member: Update",
 					"request": {
 						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Satria Wino\",\n    \"email\": \"satria@gmail.com\",\n    \"telephone\": \"081782919191\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
 							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "member",
+									"value": "{\"id\": \"10\", \"name\": \"John\", \"email\": \"john@example.com\", \"telephone\": \"08761717181\"}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-sukuna-yuji-itadori-4k-wallpaper-uhdpaper.com-195@2@a.jpg"
+								}
+							]
 						},
 						"url": "localhost:8080/api/members"
 					},
@@ -955,7 +982,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:8080/api/members"
+						"url": "localhost:8080/api/members/10"
 					},
 					"response": []
 				},
@@ -973,7 +1000,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:8080/api/members/2"
+						"url": "localhost:8080/api/members/10"
 					},
 					"response": []
 				}
@@ -986,15 +1013,27 @@
 					"name": "Book: Create",
 					"request": {
 						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"2\",\n    \"title\": \"Berlari diatas Awan\",\n    \"description\": \"Berlari diatas Awan adalah karya\",\n    \"category\": \"Sci-Fi\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
 							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "book",
+									"value": "{\"id\": \"1\", \"title\": \"Mengejar Langit 2\", \"description\": \"Mengejar langit adalah buku karya\", \"category\": \"Sci-Fi\"}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-anime-characters-uhdpaper.com-4K-8.1755.jpg"
+								}
+							]
 						},
 						"url": "localhost:8080/api/books"
 					},
@@ -1004,15 +1043,27 @@
 					"name": "Book: Update",
 					"request": {
 						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"1\",\n    \"title\": \"Mengejar Langit 2\",\n    \"description\": \"Mengejar langit adalah buku karya\",\n    \"category\": \"Sci-Fi\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
 							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "book",
+									"value": "{\"id\": \"1\", \"title\": \"Mengejar Langit 2\", \"description\": \"Mengejar langit adalah buku karya\", \"category\": \"Sci-Fi\"}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-sukuna-yuji-itadori-4k-wallpaper-uhdpaper.com-195@2@a.jpg"
+								}
+							]
 						},
 						"url": "localhost:8080/api/books"
 					},
