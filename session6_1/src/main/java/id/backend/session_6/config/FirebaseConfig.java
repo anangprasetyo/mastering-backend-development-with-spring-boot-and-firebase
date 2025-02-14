@@ -1,4 +1,4 @@
-package id.backend.session4_2.config;
+package id.backend.session_6.config;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;

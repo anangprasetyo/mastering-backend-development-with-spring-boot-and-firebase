@@ -1099,7 +1099,7 @@
 			]
 		},
 		{
-			"name": "session_5",
+			"name": "session5_1",
 			"item": [
 				{
 					"name": "Firebase: Send Notification",
@@ -1148,13 +1148,13 @@
 			]
 		},
 		{
-			"name": "session_6",
+			"name": "session6_1",
 			"item": [
 				{
 					"name": "user",
 					"item": [
 						{
-							"name": "User: Create User",
+							"name": "User: Create",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -1172,7 +1172,7 @@
 							"response": []
 						},
 						{
-							"name": "User: Update User",
+							"name": "User: Update",
 							"request": {
 								"method": "PUT",
 								"header": [],
@@ -1190,7 +1190,7 @@
 							"response": []
 						},
 						{
-							"name": "User: Delete User",
+							"name": "User: Delete",
 							"request": {
 								"method": "DELETE",
 								"header": [],
@@ -1208,7 +1208,7 @@
 							"response": []
 						},
 						{
-							"name": "User: Get User By Email",
+							"name": "User: Get By Email",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1293,55 +1293,29 @@
 					"name": "member",
 					"item": [
 						{
-							"name": "Member: Get All User",
+							"name": "Member: Get All",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcyMDIzNSwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzIwMjM1LCJleHAiOjE3Mzg3MjM4MzUsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.DNKC6M3WDmibv-NFGMegHRGbgxbqLXLUBaOWyoYQphr3fCrdlWWjFTHTb8MrDbzmEODJiv7sot8SY9zvaTeciIKWLyD_jNUenNukgrcd0D9jCM6AmmmyrTQuZNb85FWG-GYR3sm2gYMnNrNHjq8ORmK2InnDa_AsVv1BRIsxzSEg6DC2flmpnbvP3yWU5y3bPWOB1IxkHoRAtKQC1E2zMOlqs56FWFE08ew2PIZLmIO3vyAtP271K6WwnMEHU0g9Rdeek5pE9Hwvl39On7GTYs9OTDT5b-L-bTDRbToc6Ir-vYprNBqBBgJTdbkmjCBwPVSS8KOlN_85b_2En86voA",
-										"description": "Token",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"url": "localhost:8080/api/members"
-							},
-							"response": []
-						},
-						{
-							"name": "Member: Update member Copy",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcwOTM4OCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzA5Mzg4LCJleHAiOjE3Mzg3MTI5ODgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.BX5Tx0tI-KBH1utKGGFJOHjcqjRfq7UcoJQMrnNNRQAroGauFMJfMzujvA5L1QnIGeI9XYzXXKg43YrFOEZezqufGuoU3v7y0HsrILu3oKwTiiILZuGD0OOppGxGgDCW64fqt242QV_6NurZwR_GvC-ykvNSayd8LRApU9XeHS213EVdv6YTbiTA4Tar-EnWbDgPhaS8QUXm4KJYWcNUMEYhBOY8RbxFYDIInEO41cpsUBVPqTVtCwA6_BkSSNrG8kyexvYydnrSnODUDNWRIJrAqzeqJQCMVvCqdXDCYuEFq9wxtB_Fh2N0jzSWLlEuIDG44w06YEIPsabIImpPVQ",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUwNzM0MiwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTA3MzQyLCJleHAiOjE3Mzk1MTA5NDIsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.ra53fwj2l33ceznrb7LXAx67N3Ki1VMmDFzyy6gJekAsvb9sxUaGIMSKAmnKxhQhk2n3QkzXmPw1qkshf8crIAQx7-HJ89RlBgGjVM2tuGeXmKYFOwSo1fu0A_3pDGLwozfIx9vQfXLi6ISiwr68rd_NVfs8lBP8OMPT3zPHbhID2HB1xR22wzgcbxh0bqv6GZk4j4MDvmVbQf7l43amtWBeFkqokgoD2p2V-LnE0rf4kEEuQ3cfVdOdYJ2AVS90Oq211jtj0Xa04U1DQ740tAlRPtP-Notv1ND-FU0rk3Ud9cVF0u2zhcPFZSC9z_QmQgaulSXi-sj_bO5lFrU1vw",
 										"description": "Token",
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"id\": \"1\",\n    \"name\": \"Satria Wino\",\n    \"email\": \"satria@gmail.com\",\n    \"telephone\": \"081782919191\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": "localhost:8080/api/members"
 							},
 							"response": []
 						},
 						{
-							"name": "Member: Get User By Id Copy",
+							"name": "Member: Get By Id",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcwOTM4OCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzA5Mzg4LCJleHAiOjE3Mzg3MTI5ODgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.BX5Tx0tI-KBH1utKGGFJOHjcqjRfq7UcoJQMrnNNRQAroGauFMJfMzujvA5L1QnIGeI9XYzXXKg43YrFOEZezqufGuoU3v7y0HsrILu3oKwTiiILZuGD0OOppGxGgDCW64fqt242QV_6NurZwR_GvC-ykvNSayd8LRApU9XeHS213EVdv6YTbiTA4Tar-EnWbDgPhaS8QUXm4KJYWcNUMEYhBOY8RbxFYDIInEO41cpsUBVPqTVtCwA6_BkSSNrG8kyexvYydnrSnODUDNWRIJrAqzeqJQCMVvCqdXDCYuEFq9wxtB_Fh2N0jzSWLlEuIDG44w06YEIPsabIImpPVQ",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
 										"description": "Token",
 										"type": "text"
 									}
@@ -1351,18 +1325,352 @@
 							"response": []
 						},
 						{
-							"name": "Member: Delete User By Id Copy",
+							"name": "Member: Delete By Id",
 							"request": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODcwOTM4OCwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NzA5Mzg4LCJleHAiOjE3Mzg3MTI5ODgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.BX5Tx0tI-KBH1utKGGFJOHjcqjRfq7UcoJQMrnNNRQAroGauFMJfMzujvA5L1QnIGeI9XYzXXKg43YrFOEZezqufGuoU3v7y0HsrILu3oKwTiiILZuGD0OOppGxGgDCW64fqt242QV_6NurZwR_GvC-ykvNSayd8LRApU9XeHS213EVdv6YTbiTA4Tar-EnWbDgPhaS8QUXm4KJYWcNUMEYhBOY8RbxFYDIInEO41cpsUBVPqTVtCwA6_BkSSNrG8kyexvYydnrSnODUDNWRIJrAqzeqJQCMVvCqdXDCYuEFq9wxtB_Fh2N0jzSWLlEuIDG44w06YEIPsabIImpPVQ",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
 										"description": "Token",
 										"type": "text"
 									}
 								],
 								"url": "localhost:8080/api/members/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Member: Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "member",
+											"value": "{\"id\": \"2\", \"name\": \"Denis\", \"email\": \"denis@gmail.com\", \"telephone\": \"087161516161\"}",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-anime-characters-uhdpaper.com-4K-8.1755.jpg"
+										}
+									]
+								},
+								"url": "localhost:8080/api/members"
+							},
+							"response": []
+						},
+						{
+							"name": "Member: Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "member",
+											"value": "{\"id\": \"2\", \"name\": \"Denis Winarto\", \"email\": \"denis@gmail.com\", \"telephone\": \"087161516161\"}",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-sukuna-yuji-itadori-4k-wallpaper-uhdpaper.com-195@2@a.jpg"
+										}
+									]
+								},
+								"url": "localhost:8080/api/members"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "session6_2",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "User: Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satria@gmail.com\",\n    \"password\": \"satria\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/signup"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satriaw@gmail.com\",\n    \"password\": \"satriaw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/update/JuKcVZybLDX4W5BPDjIUh7y30PI2"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satriaw@gmail.com\",\n    \"password\": \"satriaw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/update/JuKcVZybLDX4W5BPDjIUh7y30PI2"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get By Email",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"satria@gmail.com\",\n    \"password\": \"satria\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/user?email=satria@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"user"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "satria@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User: Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImE0MzRmMzFkN2Y3NWRiN2QyZjQ0YjgxZDg1MjMwZWQxN2ZlNTk3MzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczODYzNTQ5MSwidXNlcl9pZCI6Ikp1S2NWWnliTERYNFc1QlBEaklVaDd5MzBQSTIiLCJzdWIiOiJKdUtjVlp5YkxEWDRXNUJQRGpJVWg3eTMwUEkyIiwiaWF0IjoxNzM4NjM1NDkxLCJleHAiOjE3Mzg2MzkwOTEsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.f_68Kx5-7TKSKUD-zxBBiAOFX-NjpBC17YaGCAnD0pWvLrvDxlm6vRZMgVMiZrYLSsOLO-ZV4t165jISaNOBMl0UodeIwtUDkOKz6WAOOuatT-gZet31CCGnNsNdbEffgJPnMPpaO6VLgirqn84ozllWXuDKtTWj-vFKP8_fMMZcQ-wFKARNb_ypRYjfJy-q4n7Nj7heEveXVDxYUS21vtVIpxYYuAeBtSUgsYbq865a63W-TlA5QhXWkoimb0u0OASpD5FuGz2GlKnxXwIL4puDDNlaGuw63exJEBgOhXXMlsCSyxhI7hy3HaFjiZZhdR42GinbTB52XOFRI1jw2w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"doni@gmail.com\",\n    \"password\": \"donisa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/auth/logout"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "book",
+					"item": [
+						{
+							"name": "Book: Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/books"
+							},
+							"response": []
+						},
+						{
+							"name": "Book: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/books/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Books: Delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"url": "localhost:8080/api/books/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Book: Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "book",
+											"value": "{\"id\": \"2\", \"title\": \"Mengejar Langit 2\", \"description\": \"Mengejar langit adalah buku karya\", \"category\": \"Sci-Fi\"}",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-anime-characters-uhdpaper.com-4K-8.1755.jpg"
+										}
+									]
+								},
+								"url": "localhost:8080/api/books"
+							},
+							"response": []
+						},
+						{
+							"name": "Book: Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkMjUwZDIyYTkzODVmYzQ4NDJhYTU2YWJhZjUzZmU5NDcxNmVjNTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdC1hcGktZTY1YzciLCJhdWQiOiJyZXN0LWFwaS1lNjVjNyIsImF1dGhfdGltZSI6MTczOTUxNjkyOCwidXNlcl9pZCI6IlU3QlIzQWFsR3BRaW5MWUllZ1hjT3JnenBMWTIiLCJzdWIiOiJVN0JSM0FhbEdwUWluTFlJZWdYY09yZ3pwTFkyIiwiaWF0IjoxNzM5NTE2OTI4LCJleHAiOjE3Mzk1MjA1MjgsImVtYWlsIjoiZG9uaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZG9uaUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.uBqytDqjRgGexlw9rmNScV1GMa2EX_P8cQ9lDjOV_uHaHbtNbI1ZBIuk7xQlkjylauroj02uuZ3kCFhEuPt5BjTVhdAXD5okeVDrclV8Olwj2gaFQBMJy1hrtXcVpoROiqJtIM2YjF54rNr253jK0KCX8M_A1wSo609Oi-x_XtwzmCX-usakOobKkSSrU0zQ8pcOTaUkl2M_jXfmtfNdxdH4w8b0W3tRGkgXg8CglHjoXSZocfWDqe3hlrFRam7b-GEfIl4IblxFS3zeiJt1hJHs8cVzA7tf13_zkvoNxrMT8Y_roBqZEXIvwZoZhrvtyWZzqyh5Hd6uXYDN0E_fAg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "book",
+											"value": "{\"id\": \"2\", \"title\": \"Mengejar Langit 22\", \"description\": \"Mengejar langit adalah buku karya\", \"category\": \"Sci-Fi\"}",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/anangprasetyo/Documents/jujutsu-kaisen-sukuna-yuji-itadori-4k-wallpaper-uhdpaper.com-195@2@a.jpg"
+										}
+									]
+								},
+								"url": "localhost:8080/api/books"
 							},
 							"response": []
 						}
