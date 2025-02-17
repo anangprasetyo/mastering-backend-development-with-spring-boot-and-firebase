@@ -1102,46 +1102,315 @@
 			"name": "session5_1",
 			"item": [
 				{
-					"name": "Firebase: Send Notification",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"token\": \"f08RQH44R9OsjY6X5yKoDR:APA91bHiOrYJ-Ey9MqIziqyGGOLTVSqXi6lybrWEVLHflOKojFQMWXtCZOk5xeoTO0khseZxRvMCvsbhHqXt1SBaSsgBpZYfnV827haZKxKx6Yi4bvOFPhU\",\n    \"title\": \"Test FCM\",\n    \"body\": \"Halo ini merupakan test FCM\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "localhost:8080/api/notifications/send"
-					},
-					"response": []
-				},
-				{
-					"name": "Firebase: Send Message",
+					"name": "User: Send Notification",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjQwZDg4ZGQ1NWQxYjAwZDg0ZWU4MWQwYjk2M2RlNGNkOGM0ZmFjM2UiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdGFwaS04ZmFjOCIsImF1ZCI6InJlc3RhcGktOGZhYzgiLCJhdXRoX3RpbWUiOjE3MzY4MzUyNTksInVzZXJfaWQiOiJJbTJPaDhGek1UU1RKdHRoZ2h4czluMzRLTzIzIiwic3ViIjoiSW0yT2g4RnpNVFNUSnR0aGdoeHM5bjM0S08yMyIsImlhdCI6MTczNjgzNTI1OSwiZXhwIjoxNzM2ODM4ODU5LCJlbWFpbCI6ImFuYW5ncHJhc2V0eW9Ab3V0bG9vay5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYW5hbmdwcmFzZXR5b0BvdXRsb29rLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.fVywyaJI7V6famluNmWW6-otMUSUACO0kZHAF-HWTJ_BA-qJgLAY1wleRQq0Nyjb7dayup1ifEZiiR7qOQul3Wwy7z56ZbMdJC_esPXpTfaad_5TMM3ncT-IER3MMGJlqUkCb-HqCuGqxhl2NlzW6XmEOi_Smg8G4CmV4RTXMnCoolllwbaIfiAW5nO0zOv3_UlW5_o04piRPOjhzsyOvqqzroxaiWPs-k9f0WXiVZ94EqvowbEIo0SakfwpsTW_kz8FHwuq9DkGRdtDN3zp6KWnuvb3239Sy2kI-W9muKSQkDhbNoZmztBsq45s45QeTWmJv9n97SP4t2hwPguslg",
-								"description": "Token",
-								"type": "text",
-								"disabled": true
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnRvbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzk3NjQzMDYsImV4cCI6MTczOTc4MjMwNn0.oLLbQ03h66PhyhkberVDF5PCKB6Rz8Xo5guENI8gmBc",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"topic\": \"test-fcm\",\n    \"title\": \"Test FCM\",\n    \"body\": \"Halo ini merupakan test FCM\"\n}",
+							"raw": "{\n    \"user_id\": \"8\",\n    \"title\": \"Test FCM\",\n    \"body\": \"Halo ini merupakan test FCM\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:8080/api/notifications/send/message"
+						"url": "localhost:8080/api/notifications"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Subscibe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnRvbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzk3NjQzMDYsImV4cCI6MTczOTc4MjMwNn0.oLLbQ03h66PhyhkberVDF5PCKB6Rz8Xo5guENI8gmBc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/notifications/subscribe?user_id=8&topic=topic-fcm",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"notifications",
+								"subscribe"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "8"
+								},
+								{
+									"key": "topic",
+									"value": "topic-fcm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Notification by Topic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnRvbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzk3NjQzMDYsImV4cCI6MTczOTc4MjMwNn0.oLLbQ03h66PhyhkberVDF5PCKB6Rz8Xo5guENI8gmBc",
+								"description": "Token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"topic-fcm\",\n    \"title\": \"Test FCM Hayo\",\n    \"body\": \"Halo ini merupakan test FCM by topic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/notifications/topic"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Save Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbnRvbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzk3NjMzMDEsImV4cCI6MTczOTc4MTMwMX0.T_VWa8qTIfMcBAxXQtj_SKTUWh1lqPFavxMy7Dz9ZiQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"8\",\n    \"token\": \"f08RQH44R9OsjY6X5yKoDR:APA91bHiOrYJ-Ey9MqIziqyGGOLTVSqXi6lybrWEVLHflOKojFQMWXtCZOk5xeoTO0khseZxRvMCvsbhHqXt1SBaSsgBpZYfnV827haZKxKx6Yi4bvOFPhU\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/users/token"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anton@gmail.com\",\n    \"password\": \"anton\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "User: Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "session5_2",
+			"item": [
+				{
+					"name": "Student: Send Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5Nzc0NDg4LCJleHAiOjE3Mzk3OTI0ODh9.uj_uMuZLFvJ0i8Mi_vd8jC7ARS-SBfoTo1Mu3S2Ejkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student_id\": \"6\",\n    \"title\": \"Student Test FCM\",\n    \"body\": \"Halo ini merupakan test Student FCM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/notifications"
+					},
+					"response": []
+				},
+				{
+					"name": "Student: Subscibe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5Nzc0NDg4LCJleHAiOjE3Mzk3OTI0ODh9.uj_uMuZLFvJ0i8Mi_vd8jC7ARS-SBfoTo1Mu3S2Ejkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/notifications/subscribe?student_id=6&topic=student-fcm",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"notifications",
+								"subscribe"
+							],
+							"query": [
+								{
+									"key": "student_id",
+									"value": "6"
+								},
+								{
+									"key": "topic",
+									"value": "student-fcm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Notification by Topic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5Nzc0NDg4LCJleHAiOjE3Mzk3OTI0ODh9.uj_uMuZLFvJ0i8Mi_vd8jC7ARS-SBfoTo1Mu3S2Ejkk",
+								"description": "Token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"student-fcm\",\n    \"title\": \"Test Student FCM Topic\",\n    \"body\": \"Halo ini merupakan test FCM Student by topic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/notifications/topic"
+					},
+					"response": []
+				},
+				{
+					"name": "Student: Save Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW5pc29AZ21haWwuY29tIiwiaWF0IjoxNzM5Nzc0NDg4LCJleHAiOjE3Mzk3OTI0ODh9.uj_uMuZLFvJ0i8Mi_vd8jC7ARS-SBfoTo1Mu3S2Ejkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student_id\": \"6\",\n    \"token\": \"f08RQH44R9OsjY6X5yKoDR:APA91bHiOrYJ-Ey9MqIziqyGGOLTVSqXi6lybrWEVLHflOKojFQMWXtCZOk5xeoTO0khseZxRvMCvsbhHqXt1SBaSsgBpZYfnV827haZKxKx6Yi4bvOFPhU\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/students/token"
+					},
+					"response": []
+				},
+				{
+					"name": "Student: Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"deniso@gmail.com\",\n    \"password\": \"deniso\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Student: Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/logout"
 					},
 					"response": []
 				}

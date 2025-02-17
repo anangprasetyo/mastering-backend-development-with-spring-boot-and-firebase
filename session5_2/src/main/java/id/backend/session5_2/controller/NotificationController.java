@@ -1,4 +1,4 @@
-package id.backend.session_5.controller;
+package id.backend.session5_2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import id.backend.session_5.dto.NotificationRequest;
-import id.backend.session_5.dto.NotificationTopicRequest;
-import id.backend.session_5.service.NotificationService;
+import id.backend.session5_2.dto.NotificationRequest;
+import id.backend.session5_2.dto.NotificationTopicRequest;
+import id.backend.session5_2.service.NotificationService;
 import jakarta.validation.Valid;
 
 @RestController
@@ -27,7 +27,7 @@ public class NotificationController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> sendNotification(@Valid @RequestBody NotificationRequest request) {
         try {
-            String response = notificationService.sendNotification(request.getUser_id(), request.getTitle(),
+            String response = notificationService.sendNotification(request.getStudent_id(), request.getTitle(),
                     request.getBody());
             return ResponseEntity.ok("Notification sent: " + response);
         } catch (Exception e) {
@@ -37,9 +37,9 @@ public class NotificationController {
 
     @PostMapping("/subscribe")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> subscribeToTopic(@RequestParam int user_id, @RequestParam String topic) {
+    public ResponseEntity<String> subscribeToTopic(@RequestParam int student_id, @RequestParam String topic) {
         try {
-            notificationService.subscribeToTopic(user_id, topic);
+            notificationService.subscribeToTopic(student_id, topic);
             return ResponseEntity.ok("Subscribed to topic: " + topic);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error subscribing: " + e.getMessage());

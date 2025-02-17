@@ -1,12 +1,12 @@
-package id.backend.session_5.service;
+package id.backend.session5_2.service;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingException;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
 
-import id.backend.session_5.model.UserToken;
-import id.backend.session_5.repository.UserTokenRepository;
+import id.backend.session5_2.model.StudentToken;
+import id.backend.session5_2.repository.StudentTokenRepository;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -18,10 +18,10 @@ import org.springframework.stereotype.Service;
 public class NotificationService {
 
         @Autowired
-        private UserTokenRepository userTokenRepository;
+        private StudentTokenRepository studentTokenRepository;
 
-        public String sendNotification(int userId, String title, String body) throws FirebaseMessagingException {
-                Optional<UserToken> tokenOpt = userTokenRepository.findByUserId(userId);
+        public String sendNotification(int studentId, String title, String body) throws FirebaseMessagingException {
+                Optional<StudentToken> tokenOpt = studentTokenRepository.findByStudentId(studentId);
                 if (tokenOpt.isPresent()) {
                         Notification notification = Notification.builder()
                                         .setTitle(title)
@@ -34,11 +34,11 @@ public class NotificationService {
                                         .build();
                         return FirebaseMessaging.getInstance().send(message);
                 }
-                return "Token not found for user: " + userId;
+                return "Token not found for student: " + studentId;
         }
 
-        public void subscribeToTopic(int userId, String topic) throws FirebaseMessagingException {
-                Optional<UserToken> tokenOpt = userTokenRepository.findByUserId(userId);
+        public void subscribeToTopic(int studentId, String topic) throws FirebaseMessagingException {
+                Optional<StudentToken> tokenOpt = studentTokenRepository.findByStudentId(studentId);
                 if (tokenOpt.isPresent()) {
                         FirebaseMessaging.getInstance().subscribeToTopic(
                                         Collections.singletonList(tokenOpt.get().getToken()),
