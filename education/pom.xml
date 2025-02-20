@@ -76,6 +76,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+		<!-- For deployment
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -90,7 +91,7 @@
 			<groupId>com.google.cloud</groupId>
 			<artifactId>google-cloud-storage</artifactId>
 			<version>2.32.0</version> 
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>
@@ -119,15 +120,15 @@
 					</excludes>
 				</configuration>
 			</plugin>
-<plugin>
-	<groupId>com.google.cloud.tools</groupId>
-	<artifactId>appengine-maven-plugin</artifactId>
-	<version>2.4.2</version>
-	<configuration>
-		<projectId>GCLOUD_CONFIG</projectId>
-		<version>GCLOUD_CONFIG</version>
-	</configuration>
-</plugin>
+			<!-- For Deployment <plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<projectId>GCLOUD_CONFIG</projectId>
+					<version>GCLOUD_CONFIG</version>
+				</configuration>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
