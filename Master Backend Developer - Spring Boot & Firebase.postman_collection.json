@@ -1946,6 +1946,215 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "education",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "User: Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Alice Johnson\",\n    \"email\": \"alice.johnson@example.com\",\n    \"password\": \"password123\",\n    \"role\": \"TEACHER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe 2\",\n  \"email\": \"john@example.com\",\n  \"password\": \"examplePassword\",\n  \"role\": \"STUDENT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/users/1"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/users/1"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/users/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "course",
+					"item": [
+						{
+							"name": "Course: Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Introduction to Programming\",\n    \"description\": \"This course covers the basics of programming using Java.\",\n    \"teacherId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/courses"
+							},
+							"response": []
+						},
+						{
+							"name": "Course: Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Introduction to Programming\",\n    \"description\": \"This course covers the basics of programming using Java.\",\n    \"teacherId\": 2\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/courses/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Course: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/courses/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Course: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/courses"
+							},
+							"response": []
+						},
+						{
+							"name": "Course: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/courses/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "enrollment",
+					"item": [
+						{
+							"name": "Enroll: Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studentId\": 4,\n    \"courseId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/enrollments"
+							},
+							"response": []
+						},
+						{
+							"name": "Enroll: Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studentId\": 6,\n    \"courseId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/enrollments/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Enroll: Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/enrollments/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Enroll: Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/enrollments"
+							},
+							"response": []
+						},
+						{
+							"name": "Enroll: Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/enrollments/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	]
 }
