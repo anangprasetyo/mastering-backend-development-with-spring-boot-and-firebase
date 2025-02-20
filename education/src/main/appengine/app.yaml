@@ -1,0 +1,21 @@
+runtime: java17 # Change based on your Java version (java11, java17, etc.)
+instance_class: F2 # Choose based on your needs (F1, F2, F4, etc.)
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 5
+
+env_variables:
+  SPRING_DATASOURCE_URL: jdbc:mysql:///education_db?cloudSqlInstance=springboot-restapi:us-central1:my-sql-instance&socketFactory=com.google.cloud.sql.mysql.SocketFactory"
+  SPRING_DATASOURCE_USERNAME: "root"
+  SPRING_DATASOURCE_PASSWORD: "admin12#"
+
+beta_settings:
+  cloud_sql_instances: "springboot-restapi:us-central1:my-sql-instance"
+
+entrypoint: java -jar education-0.0.1-SNAPSHOT.jar
+
+handlers:
+  - url: /.*
+    script: auto
